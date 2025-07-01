@@ -27,14 +27,17 @@
       background-color: var(--bg-light);
       color: var(--text-light);
     }
-    body.light-mode h2,
+    h1, h2, .nav-link, .navbar-brand {
+      color: var(--text-dark);
+    }
     body.light-mode h1,
+    body.light-mode h2,
     body.light-mode .nav-link,
     body.light-mode .navbar-brand {
       color: var(--text-light) !important;
     }
-    h2, h1, .nav-link, .navbar-brand {
-      color: var(--text-dark);
+    .nav-link, .navbar-brand {
+      transition: color 0.3s ease-in-out;
     }
     a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -79,9 +82,9 @@
 
   <div class="container py-5">
     <header class="text-center mb-5">
-      <img src="https://drive.google.com/file/d/1dJngV9HwA2RX0GuUKDKKKq4Ewa6Z43yt/view?usp=sharing" alt="Gigih Pambuko" class="profile-img">
+      <img src="https://drive.google.com/uc?export=view&id=1dJngV9HwA2RX0GuUKDKKKq4Ewa6Z43yt" alt="Gigih Pambuko" class="profile-img">
       <h1>Hi, I'm Gigih Pambuko</h1>
-      <p class="lead">Full-Stack Developer passionate about clean architecture, automation, and scalability.</p>
+      <p class="lead">Full-Stack Software Engineer passionate about clean architecture, automation, and scalability.</p>
     </header>
 
     <section id="about" class="mb-5">
