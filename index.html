@@ -3,65 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gigih Pambuko | Full-Stack Software Engineer</title>
+  <title>Gigih Pambuko | Full‑Stack Software Engineer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle("light-mode");
-    }
-  </script>
   <style>
+    /* ---------- CSS Variables ---------- */
     :root {
       --bg-dark: #0d1117;
-      --text-dark: white;
-      --bg-light: white;
-      --text-light: #111;
+      --text-dark: #ffffff;
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --accent: #4f46e5;
+      --accent-light: #8b5cf6;
     }
+
+    /* ---------- Base Styles ---------- */
     body {
-      background-color: var(--bg-dark);
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-dark);
       color: var(--text-dark);
-      font-family: 'Segoe UI', sans-serif;
-      transition: all 0.3s ease-in-out;
+      transition: background 0.3s ease, color 0.3s ease;
+      scroll-behavior: smooth;
     }
     body.light-mode {
-      background-color: var(--bg-light);
+      background: var(--bg-light);
       color: var(--text-light);
     }
-    h1, h2, .nav-link, .navbar-brand {
-      color: var(--text-dark);
-    }
-    body.light-mode h1,
-    body.light-mode h2,
-    body.light-mode .nav-link,
-    body.light-mode .navbar-brand {
-      color: var(--text-light) !important;
-    }
-    .nav-link, .navbar-brand {
-      transition: color 0.3s ease-in-out;
-    }
-    a { color: #58a6ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge-tech { margin: 2px; }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 20px;
-    }
+
+    /* ---------- Navbar ---------- */
     nav {
       position: sticky;
       top: 0;
       z-index: 1030;
-      background-color: inherit;
+      backdrop-filter: blur(6px);
+      background: rgba(13,17,23,0.75); /* dark glass */
+      transition: background 0.3s ease;
+    }
+    body.light-mode nav {
+      background: rgba(255,255,255,0.8);
+    }
+    .navbar-brand,
+    .navbar .nav-link {
+      color: var(--text-dark) !important;
+    }
+    body.light-mode .navbar-brand,
+    body.light-mode .navbar .nav-link {
+      color: var(--text-light) !important;
+    }
+    .navbar .nav-link:hover {
+      color: var(--accent-light) !important;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg,#1e3a8a 0%,#312e81 35%,#6d28d9 70%,#a21caf 100%);
+      border-radius: 0 0 2rem 2rem;
+      margin-bottom: 4rem;
+    }
+    body.light-mode .hero {
+      background: linear-gradient(135deg,#eef2ff 0%,#e0e7ff 35%,#ddd6fe 70%,#f3e8ff 100%);
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---------- Section Headings ---------- */
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* ---------- Badges ---------- */
+    .badge-tech {
+      margin: 0.25rem;
+      background: var(--accent);
+    }
+    body.light-mode .badge-tech {
+      background: var(--accent-light);
+    }
+
+    /* ---------- Utility ---------- */
+    .toggle-btn {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    body.light-mode .toggle-btn {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
     }
   </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
+    }
+    // Keep user preference
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('prefersLight') === 'true') {
+        document.body.classList.add('light-mode');
+      }
+    });
+  </script>
 </head>
 <body>
+  <!-- ---------- Navbar ---------- -->
   <nav class="navbar navbar-expand-lg px-3">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">Gigih Pambuko</a>
+      <a class="navbar-brand fw-bold" href="#">Gigih&nbsp;Pambuko</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -74,112 +134,115 @@
           <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item"><button class="btn btn-sm btn-outline-light ms-3" onclick="toggleTheme()">Toggle Theme</button></li>
+          <li class="nav-item"><button class="btn btn-sm toggle-btn ms-3" onclick="toggleTheme()">Toggle Theme</button></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container py-5">
-    <header class="text-center mb-5">
-      <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/profile-image-gigihko.jpg" alt="Gigih Pambuko" class="profile-img">
-      <h1>Hi, I'm Gigih Pambuko</h1>
-      <p class="lead">Full-Stack Software Engineer passionate about clean architecture, automation, and scalability.</p>
-    </header>
+  <!-- ---------- Hero ---------- -->
+  <header class="hero text-white">
+    <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/profile-image-gigihko.jpg" alt="Gigih Pambuko" class="profile-img" />
+    <h1 class="display-5 fw-semibold mb-2">Hi, I'm Gigih&nbsp;Pambuko</h1>
+    <p class="lead mb-4">Full‑Stack Software Engineer passionate about clean architecture, automation &amp; scalability.</p>
+  </header>
 
+  <main class="container pb-5">
+    <!-- About -->
     <section id="about" class="mb-5">
       <h2>📍 About</h2>
-      <p>
-        Experienced in Full Stack Software Engineering and Data Professional work with over 3 years of experience in web development, data engineering, and process automation. Adept at building scalable backend systems using Python (Django), creating real-time dashboards, and streamlining operations through automation. Strong foundation in Python, SQL, RPA, ETL, and cloud-based data tools.
-      </p>
+      <p>Experienced Full‑Stack Software Engineer &amp; Data Professional with 3+ years of building scalable web apps, data engineering pipelines, and process automation. Adept at Python (Django), real‑time dashboards, and cloud‑native ETL. Strong in Python, SQL, RPA, and cloud data tooling.</p>
     </section>
 
+    <!-- Experience -->
     <section id="experience" class="mb-5">
       <h2>💼 Experience</h2>
-      <p><strong>Software Engineer</strong> @ Courts - Singapore <br><em>Nov 2024 - Present</em></p>
+      <p><strong>Software Engineer</strong> @ Courts – Singapore <br><em>Nov 2024 – Present</em></p>
       <ul>
-        <li>Identified performance bottlenecks in the legacy warehouse integration module and redesigned backend logic using Python/Django, resulting in a 30% improvement in API response time.</li>
-        <li>Led the development of real-time dashboards using Django REST API and JavaScript, enabling stakeholders to track inventory and sales with up-to-the-minute accuracy.</li>
-        <li>Managed CI/CD pipelines and Git workflows, ensuring seamless deployment with minimal downtime and improving release frequency by 25%.</li>
+        <li>Redesigned legacy warehouse integration (Python/Django) ➜ <strong>30% faster API</strong>.</li>
+        <li>Built real‑time inventory dashboards (Django REST + JS) for instant insights.</li>
+        <li>Managed CI/CD pipelines, boosting release frequency by <strong>25%</strong>.</li>
       </ul>
-      <p><strong>Warehouse Staff - Software Engineer</strong> @ PT Yamaha Indonesia Motor Manufacturing - Jakarta, Indonesia <br><em>Sep 2023 - Aug 2024</em></p>
+      <p><strong>Warehouse Staff – Software Engineer</strong> @ PT Yamaha Indonesia Motor Mfg. – Jakarta <br><em>Sep 2023 – Aug 2024</em></p>
       <ul>
-        <li>Developed a Medium Term Plan (MTP) 2024-2027 for the Warehouse Control System, establishing a strategic roadmap to enhance operational efficiency.</li>
-        <li>Developed ETL pipelines to automate data flow between warehouse management systems, reducing data processing time by 40%.</li>
-        <li>Automated key processes in the Warehouse Division by creating a Robot Process Automation (RPA) solution, streamlining operations and reducing manual workload.</li>
-        <li>Engineered and implemented the 1st generation Low-Cost Automated Guided Vehicle (AGV) in the Warehouse Division, improving material handling speed by 25% and reducing labor costs.</li>
+        <li>Authored 2024‑2027 Warehouse Control System roadmap (MTP).</li>
+        <li>Automated ETL pipelines ⬇ data processing time by <strong>40%</strong>.</li>
+        <li>Created RPA solutions, cutting manual workload.</li>
+        <li>Engineered low‑cost AGV → material handling +25% speed.</li>
       </ul>
-      <p><strong>Python Web Developer Intern</strong> @ Praxis Academy - Yogyakarta, Indonesia <br><em>Aug 2020 - Jun 2021</em></p>
+      <p><strong>Python Web Developer Intern</strong> @ Praxis Academy – Yogyakarta <br><em>Aug 2020 – Jun 2021</em></p>
       <ul>
-        <li>Developed and implemented a Management System for Field Work Practices at Universitas Nahdhatul Ulama (UNU) Yogyakarta using Python, Django and PostgreSQL.</li>
-        <li>Mentored a team of Python web developers over a 3-month period.</li>
+        <li>Built Field‑Work Practice Management System (Python/Django/PostgreSQL).</li>
+        <li>Mentored junior dev team for 3 months.</li>
       </ul>
     </section>
 
+    <!-- Education -->
     <section id="education" class="mb-5">
       <h2>🎓 Education</h2>
-      <p><strong>Binar Academy</strong> <br><em>Jun 2023 - Oct 2023</em></p>
+      <p><strong>Binar Academy</strong> <br><em>Jun 2023 – Oct 2023</em></p>
       <ul>
-        <li>Data Science, GPA: 4.60/5.00</li>
-        <li>Successfully completed a 16-week Data Science bootcamp, which included 2 levels, 9 chapters, and several mini-projects.</li>
-        <li>Collaborated with 3 team members for the final project after completing individual projects within each level.</li>
-        <li>Mastered Python, ETL, Data Analytics, Math, Statistics, Machine Learning, Big Data, and Deep Learning in a comprehensive course.</li>
+        <li>Data Science Bootcamp (GPA 4.60/5.00).</li>
+        <li>16‑week, 2‑level, 9‑chapter program + mini projects &amp; team capstone.</li>
       </ul>
-      <p><strong>Universitas Negeri Semarang</strong> <br><em>Sep 2017 - Dec 2022</em></p>
+      <p><strong>Universitas Negeri Semarang</strong> <br><em>Sep 2017 – Dec 2022</em></p>
       <ul>
-        <li>Bachelor of Computer Science, Department of Computer Science, GPA: 3.38/4.00</li>
-        <li>Thesis: Implementation of Face Recognition System for Mask Users in the Midst of Covid-19 Social Restrictions Using Haar Cascade and VGG-19.</li>
-        <li>Developed and deployed Classification of Rice Plant Diseases Using Transfer Learning and DenseNet201.</li>
+        <li>B.Sc. Computer Science (GPA 3.38/4.00).</li>
+        <li>Thesis: Masked‑Face Recognition (Haar Cascade &amp; VGG‑19).</li>
       </ul>
     </section>
 
+    <!-- Skills -->
     <section id="skills" class="mb-5">
       <h2>🛠 Skills</h2>
       <div>
-        <span class="badge bg-secondary badge-tech">Next.js</span>
-        <span class="badge bg-secondary badge-tech">Django</span>
-        <span class="badge bg-secondary badge-tech">React</span>
-        <span class="badge bg-secondary badge-tech">TailwindCSS</span>
-        <span class="badge bg-secondary badge-tech">MSSQL</span>
-        <span class="badge bg-secondary badge-tech">FastAPI</span>
-        <span class="badge bg-secondary badge-tech">PostgreSQL</span>
-        <span class="badge bg-secondary badge-tech">Docker</span>
-        <span class="badge bg-secondary badge-tech">AWS</span>
+        <span class="badge badge-tech">Next.js</span>
+        <span class="badge badge-tech">Django</span>
+        <span class="badge badge-tech">React</span>
+        <span class="badge badge-tech">TailwindCSS</span>
+        <span class="badge badge-tech">MSSQL</span>
+        <span class="badge badge-tech">FastAPI</span>
+        <span class="badge badge-tech">PostgreSQL</span>
+        <span class="badge badge-tech">Docker</span>
+        <span class="badge badge-tech">AWS</span>
       </div>
     </section>
 
+    <!-- Certifications -->
     <section id="certifications" class="mb-5">
       <h2>📜 Certifications</h2>
       <ul>
-        <li>Dicoding: <a href="https://www.dicoding.com/certificates/JLX19O465P72" target="_blank">Backend JavaScript</a></li>
-        <li>Dicoding: <a href="https://www.dicoding.com/certificates/ERZRE38QQXYV" target="_blank">Learn Cloud Basics and AI Gen at AWS</a></li>
-        <li>IBM: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2H6LGD78W3E2" target="_blank">Data Science Professional Certificate</a></li>
-        <li>Udemy: <a href="https://www.udemy.com/certificate/UC-7e1024c6-fbf7-4dbc-9784-d7a5f69d186d/" target="_blank">RPA & Intelligent Automation using Python</a></li>
-        <li>Binar Academy: <a href="https://drive.google.com/file/d/1MKYVWqR5Vysc2iYKj5LJdmJvxN6tbfU_/view" target="_blank">Data Science Course</a></li>
-        <li>Google: <a href="https://www.coursera.org/account/accomplishments/professional-cert/CWU8B5QPSWXG" target="_blank">Data Analytics Certificate</a></li>
+        <li>Dicoding – <a href="https://www.dicoding.com/certificates/JLX19O465P72" target="_blank">Backend JavaScript</a></li>
+        <li>Dicoding – <a href="https://www.dicoding.com/certificates/ERZRE38QQXYV" target="_blank">Cloud Basics &amp; Gen AI on AWS</a></li>
+        <li>IBM – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2H6LGD78W3E2" target="_blank">Data Science Professional Cert</a></li>
+        <li>Udemy – <a href="https://www.udemy.com/certificate/UC-7e1024c6-fbf7-4dbc-9784-d7a5f69d186d/" target="_blank">RPA &amp; Intelligent Automation</a></li>
+        <li>Binar Academy – <a href="https://drive.google.com/file/d/1MKYVWqR5Vysc2iYKj5LJdmJvxN6tbfU_/view" target="_blank">Data Science Course</a></li>
+        <li>Google – <a href="https://www.coursera.org/account/accomplishments/professional-cert/CWU8B5QPSWXG" target="_blank">Data Analytics Certificate</a></li>
       </ul>
     </section>
 
+    <!-- Projects -->
     <section id="projects" class="mb-5">
       <h2>🚀 Projects</h2>
       <ul>
-        <li><strong>Internal Dashboard System</strong> – Streamlines workflow of multiple departments with role-based access and analytics.</li>
-        <li><strong>Automation Reporting Suite</strong> – Python & Excel-driven reporting tool for daily and monthly metrics.</li>
-        <li><strong>Smart Approval Backend</strong> – Workflow automation using Django & Celery for financial approvals.</li>
-        <li><strong>Sentiment Analysis Prediction Using Deep Learning</strong> – Built two sentiment analysis models (Neural Network and LSTM) in 3 weeks. Designed both as 4 interactive API endpoints using Swagger UI with support for both text and file-based sentiment prediction.</li>
-        <li><strong>Cleansing Data & Sentiment Analytics: Descriptive Analysis of Twitter Data</strong> – Cleaned and analyzed 5,000+ tweets for hate speech detection using univariate and bivariate analysis. Visualized key patterns, revealing 42.4% hate speech content, 64.1% targeting individuals (via Matplotlib).</li>
+        <li><strong>Internal Dashboard System</strong> – Multi‑dept analytics with role‑based access.</li>
+        <li><strong>Automation Reporting Suite</strong> – Python + Excel daily/monthly reports.</li>
+        <li><strong>Smart Approval Backend</strong> – Django + Celery financial approval workflow.</li>
+        <li><strong>Sentiment Analysis DL</strong> – NN &amp; LSTM models + Swagger API endpoints.</li>
+        <li><strong>Twitter Hate‑Speech Analytics</strong> – Cleaned 5k tweets, revealed 42.4% hate speech.</li>
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="mb-5">
       <h2>📢 Contact</h2>
-      <p>Feel free to reach out via <a href="https://linkedin.com/in/gigihko" target="_blank">LinkedIn</a></p>
+      <p>Reach me on <a href="https://linkedin.com/in/gigihko" target="_blank">LinkedIn</a>.</p>
     </section>
+  </main>
 
-    <footer class="text-center mt-5">
-      <small>© 2025 Gigih Pambuko. Built with 💻</small>
-    </footer>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <!-- Footer -->
+  <footer class="text-center pb-4">
+    <small>© 2025 Gigih Pambuko • Built with ❤️ &amp; Bootstrap</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap
