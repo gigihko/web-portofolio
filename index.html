@@ -1,192 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gigih Pambuko | Full‑Stack Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-      /* ---------- CSS Variables ---------- */
-      :root {
-        --bg-dark: #0d1117;
-        --text-dark: #ffffff;
-        --bg-light: #ffffff;
-        --text-light: #111111;
-        --accent: #4f46e5;
-        --accent-light: #8b5cf6;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gigih Pambuko | Full‑Stack Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --text-dark: #ffffff;
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --accent: #4f46e5;
+      --accent-light: #8b5cf6;
+    }
 
-      /* ---------- Base Styles ---------- */
-      body {
-        font-family: "Segoe UI", sans-serif;
-        background: var(--bg-dark);
-        color: var(--text-dark);
-        transition: background 0.3s ease, color 0.3s ease;
-        scroll-behavior: smooth;
-      }
-      body.light-mode {
-        background: var(--bg-light);
-        color: var(--text-light);
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      /* ---------- Navbar ---------- */
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 1030;
-        backdrop-filter: blur(6px);
-        background: rgba(13,17,23,0.75);
-        transition: background 0.3s ease;
-      }
-      body.light-mode nav {
-        background: rgba(255,255,255,0.8);
-      }
-      .navbar-brand,
-      .navbar .nav-link {
-        color: var(--text-dark) !important;
-      }
-      body.light-mode .navbar-brand,
-      body.light-mode .navbar .nav-link {
-        color: var(--text-light) !important;
-      }
-      .navbar .nav-link:hover {
-        color: var(--accent-light) !important;
-      }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
 
-      /* ---------- Hero ---------- */
-      .hero {
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-        margin-bottom: 4rem;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://github.com/gigihko/web-portofolio/blob/main/background%20image.jpg?raw=true') center/cover no-repeat;
-        filter: brightness(0.3);
-        z-index: 0;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        color: var(--text-dark);
-      }
-      body.light-mode .hero::before {
-        filter: brightness(0.3);
-      }
-      body.light-mode .hero-content {
-        color: var(--text-dark);
-      }
-      .profile-img {
-        width: 180px;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 4px solid #fff;
-        box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
-        margin-bottom: 1.5rem;
-      }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
 
-      /* ---------- Section Headings ---------- */
-      section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      backdrop-filter: blur(6px);
+      background: rgba(13,17,23,0.75);
+      transition: background 0.3s ease;
+    }
+    body.light-mode nav {
+      background: rgba(255,255,255,0.8);
+    }
+    .navbar-brand,
+    .navbar .nav-link {
+      color: var(--text-dark) !important;
+    }
+    body.light-mode .navbar-brand,
+    body.light-mode .navbar .nav-link {
+      color: var(--text-light) !important;
+    }
+    .navbar .nav-link:hover {
+      color: var(--accent-light) !important;
+    }
 
-      /* ---------- Badges ---------- */
-      .badge-tech {
-        margin: 0.25rem;
-        background: var(--accent);
-      }
-      body.light-mode .badge-tech {
-        background: var(--accent-light);
-      }
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      margin-bottom: 4rem;
+      padding: 0 1rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://github.com/gigihko/web-portofolio/blob/main/background%20image.jpg?raw=true') center/cover no-repeat;
+      filter: brightness(0.4);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: var(--text-dark);
+      max-width: 90%;
+    }
+    body.light-mode .hero::before {
+      filter: brightness(0.7);
+    }
+    body.light-mode .hero-content {
+      color: var(--text-light);
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: inherit;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: inherit;
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+      margin-bottom: 1.5rem;
+    }
 
-      /* ---------- Utility ---------- */
-      .toggle-btn {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-      body.light-mode .toggle-btn {
-        border-color: var(--accent-light);
-        color: var(--accent-light);
-      }
-    </style>
-    <script>
-      function toggleTheme() {
-        document.body.classList.toggle('light-mode');
-        const icon = document.getElementById('theme-icon');
-        if (document.body.classList.contains('light-mode')) {
-          icon.classList.remove('fa-sun');
-          icon.classList.add('fa-moon');
-        } else {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        }
-        localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
-      }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
 
-      window.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('prefersLight') === 'true') {
-          document.body.classList.add('light-mode');
-        }
-        const icon = document.getElementById('theme-icon');
-        if (document.body.classList.contains('light-mode')) {
-          icon.classList.remove('fa-sun');
-          icon.classList.add('fa-moon');
-        } else {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <!-- ---------- Navbar ---------- -->
-    <nav class="navbar navbar-expand-lg px-3">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">Gigih&nbsp;Pambuko</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item">
-              <button class="btn btn-sm toggle-btn ms-3" onclick="toggleTheme()">
-                <i id="theme-icon" class="fas fa-sun"></i>
-              </button>
-            </li>
-          </ul>
-        </div>
+    .badge-tech {
+      margin: 0.25rem;
+      background: var(--accent);
+    }
+    body.light-mode .badge-tech {
+      background: var(--accent-light);
+    }
+
+    .toggle-btn {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    body.light-mode .toggle-btn {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const icon = document.getElementById('theme-icon');
+      if (document.body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+      localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('prefersLight') === 'true') {
+        document.body.classList.add('light-mode');
+      }
+      const icon = document.getElementById('theme-icon');
+      if (document.body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Gigih&nbsp;Pambuko</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button class="btn btn-sm toggle-btn ms-3" onclick="toggleTheme()">
+              <i id="theme-icon" class="fas fa-sun"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-    </nav>
-
-    <!-- ---------- Hero Section ---------- -->
-    <section class="hero">
-      <div class="hero-content">
-        <img src="https://github.com/gigihko/web-portofolio/blob/main/profile-image-gigihko.jpg?raw=true" alt="Gigih Pambuko" class="profile-img" />
-        <h1>Hi, I'm Gigih Pambuko</h1>
-        <p>Full‑Stack Software Engineer passionate about clean architecture, automation & scalability.</p>
-      </div>
-    </section>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-content">
+      <img src="https://github.com/gigihko/web-portofolio/blob/main/profile-image-gigihko.jpg?raw=true" alt="Gigih Pambuko" class="profile-img" />
+      <h1>Hi, I'm Gigih Pambuko</h1>
+      <p>Full‑Stack Software Engineer passionate about clean architecture, automation & scalability.</p>
+    </div>
+  </section>
 
     <main class="container pb-5">
       <!-- About -->
