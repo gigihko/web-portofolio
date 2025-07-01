@@ -6,133 +6,6 @@
   <title>Gigih Pambuko | Full‑Stack Software Engineer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --bg-dark: #0d1117;
-      --text-dark: #ffffff;
-      --bg-light: #ffffff;
-      --text-light: #111111;
-      --accent: #4f46e5;
-      --accent-light: #8b5cf6;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      font-family: "Segoe UI", sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    body.light-mode {
-      background: var(--bg-light);
-      color: var(--text-light);
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1030;
-      backdrop-filter: blur(6px);
-      background: rgba(13,17,23,0.75);
-      transition: background 0.3s ease;
-    }
-    body.light-mode nav {
-      background: rgba(255,255,255,0.8);
-    }
-    .navbar-brand,
-    .navbar .nav-link {
-      color: var(--text-dark) !important;
-    }
-    body.light-mode .navbar-brand,
-    body.light-mode .navbar .nav-link {
-      color: var(--text-light) !important;
-    }
-    .navbar .nav-link:hover {
-      color: var(--accent-light) !important;
-    }
-
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      margin-bottom: 4rem;
-      padding: 0 1rem;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://github.com/gigihko/web-portofolio/blob/main/background%20image.jpg?raw=true') center/cover no-repeat;
-      filter: brightness(0.4);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 90%;
-    }
-    .hero-content h1,
-    .hero-content p {
-      color: #ffffff !important;
-    }
-    .hero-content h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-    }
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
-      margin-bottom: 1.5rem;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .badge-tech {
-      margin: 0.25rem;
-      background: var(--accent);
-    }
-    body.light-mode .badge-tech {
-      background: var(--accent-light);
-    }
-
-    .toggle-btn {
-      border-color: var(--accent);
-      color: var(--accent);
-      font-size: 1.2rem;
-    }
-    body.light-mode .toggle-btn {
-      border-color: var(--accent-light);
-      color: var(--accent-light);
-    }
-  </style>
   <script>
     function toggleTheme() {
       document.body.classList.toggle('light-mode');
@@ -162,7 +35,7 @@
   </script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#">Gigih&nbsp;Pambuko</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,52 +69,73 @@
 
     <main class="container pb-5">
       <!-- About -->
-      <section id="about" class="mb-5">
-        <h2>📍 About</h2>
-        <p>Experienced Full‑Stack Software Engineer &amp; Data Professional with 3+ years of building scalable web apps, data engineering pipelines, and process automation. Adept at Python (Django), real‑time dashboards, and cloud‑native ETL. Strong in Python, SQL, RPA, and cloud data tooling.</p>
+      <section class="about-section" id="about">
+        <h2 class="about-heading">About 📍</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Experienced <strong>Software Engineer</strong> with over <strong>3 years of experience in web development</strong>, currently working as a <strong>Software Engineer at Courts Singapore</strong>.</p>
+            <p>Building scalable backend systems using Python (Django), creating real-time dashboards, and streamlining operations through automation. Strong foundation in Python, SQL, RPA, ETL, and cloud-based data tools.</p>
+          </div>
+          <div class="contact-card">
+            <h5 class="mb-3 fw-semibold">Contact Information</h5>
+            <p><i class="fas fa-envelope"></i> gigihko99@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +62 882-0005-84050</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</p>
+          </div>
+        </div>
       </section>
 
       <!-- Experience -->
-      <section id="experience" class="mb-5">
-        <h2>💼 Experience</h2>
-        <p><strong>Software Engineer</strong> @ Courts – Singapore <br><em>Nov 2024 – Present</em></p>
-        <ul>
-          <li>Redesigned legacy warehouse integration (Python/Django) ➜ <strong>30% faster API</strong>.</li>
-          <li>Built real‑time inventory dashboards (Django REST + JS) for instant insights.</li>
-          <li>Managed CI/CD pipelines, boosting release frequency by <strong>25%</strong>.</li>
-        </ul>
-        <p><strong>Warehouse Staff – Software Engineer</strong> @ PT Yamaha Indonesia Motor Mfg. – Jakarta <br><em>Sep 2023 – Aug 2024</em></p>
-        <ul>
-          <li>Authored 2024‑2027 Warehouse Control System roadmap (MTP).</li>
-          <li>Automated ETL pipelines ⬇ data processing time by <strong>40%</strong>.</li>
-          <li>Created RPA solutions, cutting manual workload.</li>
-          <li>Engineered low‑cost AGV → material handling +25% speed.</li>
-        </ul>
-        <p><strong>Python Web Developer Intern</strong> @ Praxis Academy – Yogyakarta <br><em>Aug 2020 – Jun 2021</em></p>
-        <ul>
-          <li>Built Field‑Work Practice Management System (Python/Django/PostgreSQL).</li>
-          <li>Mentored junior dev team for 3 months.</li>
-        </ul>
+      <section class="work-section" id="experience">
+        <h2>Work Experience 💼 </h2>
+
+        <div class="job-entry">
+          <div class="job-title">Software Engineer</div>
+          <div class="job-company">Court Singapore · Nov 2024 – Present</div>
+          <ul>
+            <li>Identified performance bottlenecks in the legacy warehouse integration module and redesigned backend logic using Python/Django, resulting in a 30% improvement in API response time.</li>
+            <li>Led the development of real-time dashboards using Django REST API and JavaScript, enabling stakeholders to track inventory and sales with up-to-the-minute accuracy.</li>
+            <li>Managed CI/ CD pipelines and Git workflows, ensuring seamless deployment with minimal downtime and improving release frequency by 25%.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-title">Warehouse Staff - Software Engineer</div>
+          <div class="job-company">PT Yamaha Indonesia Motor Manufacturing · Sep 2023 – Aug 2024</div>
+          <ul>
+            <li>Developed a Medium Term Plan (MTP) 2024-2027 for the Warehouse Control System, establishing a strategic roadmap to enhance operational efficiency.</li>
+            <li>Developed ETL pipelines to automate data flow between warehouse management systems, reducing data processing time by 40%.</li>
+            <li>Automated key processes in the Warehouse Division by creating a Robot Process Automation (RPA) solution, streamlining operations and reducing manual workload.</li>
+            <li>Engineered and implemented the 1st generation Low-Cost Automated Guided Vehicle (AGV) in the Warehouse Division, improving material handling speed by 25% and reducing labor costs.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-title">Python Web Developer Intern</div>
+          <div class="job-company">Praxis Academy Yogyakarta · Aug 2020 – Jun 2021</div>
+          <ul>
+            <li>Developed and implemented a Management System for Field Work Practices at Universitas Nahdhatul Ulama (UNU) Yogyakarta using Python, Django and PostgreSQL.</li>
+            <li>Mentored a team of Python web developers over a 3-month period.</li>
+          </ul>
+        </div>
+
+        <!-- Tambahkan job-entry lainnya di sini -->
       </section>
 
+
       <!-- Education -->
-      <section id="education" class="mb-5">
-        <h2>🎓 Education</h2>
-        <p><strong>Binar Academy</strong> <br><em>Jun 2023 – Oct 2023</em></p>
-        <ul>
-          <li>Data Science Bootcamp (GPA 4.60/5.00).</li>
-          <li>16‑week, 2‑level, 9‑chapter program + mini projects &amp; team capstone.</li>
-        </ul>
-        <p><strong>Universitas Negeri Semarang</strong> <br><em>Sep 2017 – Dec 2022</em></p>
-        <ul>
-          <li>B.Sc. Computer Science (GPA 3.38/4.00).</li>
-          <li>Thesis: Masked‑Face Recognition (Haar Cascade &amp; VGG‑19).</li>
-        </ul>
+      <section class="education-section" id="education">
+        <h2>Education 🎓 </h2>
+        <div class="education-entry">
+          <strong>Computer Science, Unversitas Negeri Semarang</strong><br>
+          <em>Bachelor Degree • Semarang, Indonesia • 2017 - 2022</em>
+          <p>Graduated with GPA 3.38</p>
+        </div>
       </section>
 
       <!-- Skills -->
       <section id="skills" class="mb-5">
-        <h2>🛠 Skills</h2>
+        <h2>Skills 🛠 </h2>
         <div>
           <span class="badge badge-tech">Next.js</span>
           <span class="badge badge-tech">Django</span>
@@ -256,16 +150,34 @@
       </section>
 
       <!-- Certifications -->
-      <section id="certifications" class="mb-5">
-        <h2>📜 Certifications</h2>
-        <ul>
-          <li>Dicoding – <a href="https://www.dicoding.com/certificates/JLX19O465P72" target="_blank">Backend JavaScript</a></li>
-          <li>Dicoding – <a href="https://www.dicoding.com/certificates/ERZRE38QQXYV" target="_blank">Cloud Basics &amp; Gen AI on AWS</a></li>
-          <li>IBM – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2H6LGD78W3E2" target="_blank">Data Science Professional Cert</a></li>
-          <li>Udemy – <a href="https://www.udemy.com/certificate/UC-7e1024c6-fbf7-4dbc-9784-d7a5f69d186d/" target="_blank">RPA &amp; Intelligent Automation</a></li>
-          <li>Binar Academy – <a href="https://drive.google.com/file/d/1MKYVWqR5Vysc2iYKj5LJdmJvxN6tbfU_/view" target="_blank">Data Science Course</a></li>
-          <li>Google – <a href="https://www.coursera.org/account/accomplishments/professional-cert/CWU8B5QPSWXG" target="_blank">Data Analytics Certificate</a></li>
-        </ul>
+      <section class="certification-section" id="certifications">
+        <h2>Certifications 📜 </h2>
+        <div class="certification-cards">
+          <div class="cert-card">
+            <strong>Dicoding</strong><br>
+            <a href="https://www.dicoding.com/certificates/JLX19O465P72" target="_blank">Backend JavaScript</a>
+          </div>
+          <div class="cert-card">
+            <strong>Dicoding</strong><br>
+            <a href="https://www.dicoding.com/certificates/ERZRE38QQXYV" target="_blank">Cloud Basics & Gen AI on AWS</a>
+          </div>
+          <div class="cert-card">
+            <strong>IBM</strong><br>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2H6LGD78W3E2" target="_blank">Data Science Professional Cert</a>
+          </div>
+          <div class="cert-card">
+            <strong>Udemy</strong><br>
+            <a href="https://www.udemy.com/certificate/UC-7e1024c6-fbf7-4dbc-9784-d7a5f69d186d/" target="_blank">RPA & Intelligent Automation</a>
+          </div>
+          <div class="cert-card">
+            <strong>Binar Academy</strong><br>
+            <a href="https://drive.google.com/file/d/1MKYVWqR5Vysc2iYKj5LJdmJvxN6tbfU_/view" target="_blank">Data Science Course</a>
+          </div>
+          <div class="cert-card">
+            <strong>Google</strong><br>
+            <a href="https://www.coursera.org/account/accomplishments/professional-cert/CWU8B5QPSWXG" target="_blank">Data Analytics Certificate</a>
+          </div>
+        </div>
       </section>
 
       <!-- Projects -->
@@ -293,5 +205,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
   </body>
 </html>
