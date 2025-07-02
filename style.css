@@ -177,26 +177,37 @@ body.light-mode .toggle-btn {
   color: var(--accent);
   margin-bottom: 1rem;
 }
-.job-entry {
+/* Timeline wrapper */
+.timeline {
   position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 2rem;
+  /* margin-left: 1rem; */
+  padding-left: 0.6rem;
   border-left: 2px solid var(--accent);
 }
+
+/* Bullet on each job */
+.job-entry {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
 .job-entry::before {
-  content: "";
+  content: '';
   position: absolute;
-  left: -0.6rem;
-  top: 1rem;
+  left: -1.15rem;
+  top: 0.9rem;
   width: 1rem;
   height: 1rem;
-  background-color: var(--bg-light);
+  background-color: var(--bg-dark);
   border: 3px solid var(--accent);
-  border-radius: 70%;
+  border-radius: 50%;
+  z-index: 1;
 }
 body.light-mode .job-entry::before {
   background-color: var(--bg-light);
 }
+
 .job-title {
   font-weight: 600;
   font-size: 1.1rem;
@@ -222,19 +233,19 @@ body.light-mode .job-entry::before {
 .education-section {
   max-width: 1100px;
   padding-left: 1.5rem; /* pastikan ini */
-  padding-right: 0;
+  padding-right: 2rem;
 }
 .education-section h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .education-entry {
   position: relative;
   margin-bottom: 2rem;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   /* border-left: 2px solid var(--accent); */
 }
 .education-entry::before {
