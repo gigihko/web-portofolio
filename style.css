@@ -87,6 +87,15 @@ body.light-mode .navbar .nav-link {
   font-size: 2.5rem;
   font-weight: 700;
 }
+
+.hero-content h2,
+.hero-content p {
+  color: #ffffff !important;
+}
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
 .hero-content p {
   font-size: 1.2rem;
 }
@@ -280,4 +289,9 @@ body:not(.light-mode) .cert-card {
   background-color: #1c1c1c;
   color: #ffffff;
   border-color: #333;
+}
+
+/* --- Fix navbar toggler icon for light mode --- */
+body.light-mode .navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(17, 17, 17, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
