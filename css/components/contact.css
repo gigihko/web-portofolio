@@ -1,9 +1,9 @@
-body.light-mode .contact-section {
-    background-color: #f9f9f9 !important;
-    color: #111 !important;
+.text-muted-custom {
+  color: #6c757d;
 }
-
-body:not(.light-mode) .contact-section {
-    background-color: #111 !important;
-    color: #f1f1f1 !important;
+body.light-mode .text-muted-custom {
+  color: #6c757d; /* abu-abu terang */
+}
+body:not(.light-mode) .text-muted-custom {
+  color: #ffffffb3; /* putih dengan transparansi */
 }
