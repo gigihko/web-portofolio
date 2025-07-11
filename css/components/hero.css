@@ -54,3 +54,10 @@
   box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
   margin-bottom: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .hero::before {
+    background-position: center top;
+    background-size: cover;
+  }
+}
