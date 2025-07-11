@@ -1,0 +1,63 @@
+.work-section {
+  max-width: 1100px;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+.work-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Timeline wrapper */
+.timeline {
+  position: relative;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--accent);
+}
+
+/* Bullet on each job */
+.job-entry {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.job-entry::before {
+  content: '';
+  position: absolute;
+  left: -1.15rem;
+  top: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--bg-dark);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  z-index: 1;
+}
+body.light-mode .job-entry::before {
+  background-color: var(--bg-light);
+}
+
+.job-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.job-company {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.job-duration {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+.job-entry ul {
+  padding-left: 1rem;
+}
+.key-achievements {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}

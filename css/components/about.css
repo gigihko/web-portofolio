@@ -1,0 +1,35 @@
+.about-section {
+  padding: 4rem 1rem;
+}
+.about-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.about-text {
+  flex: 1 1 60%;
+  font-size: 1.1rem;
+}
+.contact-card {
+  flex: 1 1 35%;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  color: #000;
+}
+.contact-card i {
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+}

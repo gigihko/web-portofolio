@@ -1,0 +1,9 @@
+body.light-mode .contact-section {
+    background-color: #f9f9f9 !important;
+    color: #111 !important;
+}
+
+body:not(.light-mode) .contact-section {
+    background-color: #111 !important;
+    color: #f1f1f1 !important;
+}

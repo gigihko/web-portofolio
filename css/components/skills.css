@@ -1,0 +1,32 @@
+/* Skills Section */
+.skills-section {
+  padding: 4rem 1rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .skills-section {
+  background-color: #ffffff; /* abu-abu muda untuk terang */
+}
+
+.skills-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.skills-section .badge-tech {
+  display: inline-block;
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 0.4em 0.75em;
+  margin: 0.2em 0.3em 0.2em 0;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+body.light-mode .skills-section .badge-tech {
+  background: var(--accent-light);
+}

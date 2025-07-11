@@ -1,0 +1,37 @@
+.certification-section {
+  max-width: 100%;
+  margin: 2rem auto 4rem;
+  padding: 2 1rem;
+}
+.certification-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.certification-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.cert-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #111111;
+  min-width: 280px;
+}
+body.light-mode .cert-card {
+  background-color: #ffffff;
+  color: #111111;
+}
+body:not(.light-mode) .cert-card {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  border-color: #333;
+}

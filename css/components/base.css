@@ -1,0 +1,55 @@
+:root {
+  --bg-dark: #0d1117;
+  --text-dark: #ffffff;
+  --bg-light: #ffffff;
+  --text-light: #111111;
+  --accent: #4f46e5;
+  --accent-light: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.badge-tech {
+  display: inline-block;
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 0.4em 0.75em;
+  margin: 0.2em 0.3em 0.2em 0;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+body.light-mode .badge-tech {
+  background: var(--accent-light);
+}
+
+.toggle-btn {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+body.light-mode .toggle-btn {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+}

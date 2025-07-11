@@ -4,395 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gigih Pambuko | Full‑Stack Software Engineer</title>
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/gigihko/web-portofolio/main/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/gigihko/web-portofolio/main/static/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <script>
-  function toggleTheme() {
-    document.body.classList.toggle('light-mode');
-    const icon = document.getElementById('theme-icon');
-    if (document.body.classList.contains('light-mode')) {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-    } else {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
-    localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
-    updateNavbarTheme();
-  }
 
-  function updateNavbarTheme() {
-    const navbar = document.getElementById('main-navbar');
-    if (document.body.classList.contains('light-mode')) {
-      navbar.classList.remove('navbar-dark');
-      navbar.classList.add('navbar-light');
-    } else {
-      navbar.classList.remove('navbar-light');
-      navbar.classList.add('navbar-dark');
-    }
-  }
+  <!-- Style utama -->
+  <link rel="stylesheet" href="style.css" />
 
-  window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('prefersLight') === 'true') {
-      document.body.classList.add('light-mode');
-    }
+  <!-- Komponen CSS -->
+  <link rel="stylesheet" href="css/components/base.css" />
+  <link rel="stylesheet" href="css/components/navbar.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/components/about.css" />
+  <link rel="stylesheet" href="css/components/experience.css" />
+  <link rel="stylesheet" href="css/components/education.css" />
+  <link rel="stylesheet" href="css/components/skills.css" />
+  <link rel="stylesheet" href="css/components/certifications.css" />
+  <link rel="stylesheet" href="css/components/projects.css" />
+  <link rel="stylesheet" href="css/components/contact.css" />
+  <link rel="stylesheet" href="css/components/footer.css" />
 
-    const icon = document.getElementById('theme-icon');
-    if (document.body.classList.contains('light-mode')) {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-    } else {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
-
-    updateNavbarTheme();
-  });
-</script>
-
+  <!-- FontAwesome (untuk ikon toggle tema dll) -->
+  <!-- <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script> -->
 </head>
-<body>
-  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent px-3">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">Gigih&nbsp;Pambuko</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item">
-            <button class="btn btn-sm toggle-btn ms-3" onclick="toggleTheme()">
-              <i id="theme-icon" class="fas fa-sun"></i>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <section class="hero">
-    <div class="hero-content">
-      <img src="https://github.com/gigihko/web-portofolio/blob/main/profile-image-gigihko.jpg?raw=true" alt="Gigih Pambuko" class="profile-img" />
-      <h2>Hi, I'm</h2>
-      <h1>Gigih Pambuko</h1>
-      <p>Full‑Stack Software Engineer | Backend Developer | 3+ Years in Scalable Web Solutions | Building Internal Business Tools</p>
-      <div class="mt-4">
-        <a href="#about" class="btn btn-primary me-2">Get in Touch</a>
-        <a href="#projects" class="btn btn-light">View Projects</a>
-      </div>
 
-    </div>
-  </section>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
+  <div id="navbar-placeholder"></div>
+  <div id="hero-placeholder"></div>
+  <main class="container pb-5">
+    <div id="about-placeholder"></div>
+    <div id="experience-placeholder"></div>
+    <div id="education-placeholder"></div>
+    <div id="skills-placeholder"></div>
+    <div id="certifications-placeholder"></div>
+    <div id="projects-placeholder"></div>
+  </main>
+  <div id="contact-placeholder"></div>
+  <div id="footer-placeholder"></div>
 
-    <main class="container pb-5">
-      <!-- About -->
-      <section class="about-section" id="about">
-        <h2 class="about-heading">About 📍</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>Experienced <strong>Software Engineer</strong> with over <strong>3 years of experience in web development</strong>, currently working as a <strong>Software Engineer at Courts Singapore</strong>.</p>
-            <p>Building scalable backend systems using Python (Django), creating real-time dashboards, and streamlining operations through automation. Strong foundation in Python, SQL, RPA, ETL, and cloud-based data tools.</p>
-          </div>
-          <div class="contact-card">
-            <h5 class="mb-3 fw-semibold">Contact Information</h5>
-            <p><i class="fas fa-envelope"></i> gigihko99@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +62 882-0005-84050</p>
-            <p><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section class="work-section" id="experience">
-        <h2>Work Experience 💼 </h2>
-
-        <div class="timeline">
-          <div class="job-entry">
-            <div class="job-title">Software Engineer</div>
-            <div class="job-company">Court Singapore · Nov 2024 – Present</div>
-            <ul>
-              <li>Identified performance bottlenecks in the legacy warehouse integration module and redesigned backend logic using Python/Django, resulting in a 30% improvement in API response time.</li>
-              <li>Led the development of real-time dashboards using Django REST API and JavaScript, enabling stakeholders to track inventory and sales with up-to-the-minute accuracy.</li>
-              <li>Managed CI/ CD pipelines and Git workflows, ensuring seamless deployment with minimal downtime and improving release frequency by 25%.</li>
-            </ul>
-          </div>
-
-          <div class="job-entry">
-            <div class="job-title">Warehouse Staff - Software Engineer</div>
-            <div class="job-company">PT Yamaha Indonesia Motor Manufacturing · Sep 2023 – Aug 2024</div>
-            <ul>
-              <li>Developed a Medium Term Plan (MTP) 2024-2027 for the Warehouse Control System, establishing a strategic roadmap to enhance operational efficiency.</li>
-              <li>Developed ETL pipelines to automate data flow between warehouse management systems, reducing data processing time by 40%.</li>
-              <li>Automated key processes in the Warehouse Division by creating a Robot Process Automation (RPA) solution, streamlining operations and reducing manual workload.</li>
-              <li>Engineered and implemented the 1st generation Low-Cost Automated Guided Vehicle (AGV) in the Warehouse Division, improving material handling speed by 25% and reducing labor costs.</li>
-            </ul>
-          </div>
-
-          <div class="job-entry">
-            <div class="job-title">Python Web Developer Intern</div>
-            <div class="job-company">Praxis Academy Yogyakarta · Aug 2020 – Jun 2021</div>
-            <ul>
-              <li>Developed and implemented a Management System for Field Work Practices at Universitas Nahdhatul Ulama (UNU) Yogyakarta using Python, Django and PostgreSQL.</li>
-              <li>Mentored a team of Python web developers over a 3-month period.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-
-
-      <!-- Education -->
-      <section class="education-section" id="education">
-        <h2>Education 🎓 </h2>
-        <div class="education-entry">
-          <strong>Computer Science, Unversitas Negeri Semarang</strong><br>
-          <em>Bachelor Degree • Semarang, Indonesia • 2017 - 2022</em>
-          <p>Graduated with GPA 3.38</p>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="mb-5">
-        <h2 class="mb-1">Skills 🛠</h2>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
-          
-          <div>
-            <h6 class="fw-semibold">Backend Development</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Django</span>
-              <span class="badge badge-tech">FastAPI</span>
-              <span class="badge badge-tech">Python</span>
-              <span class="badge badge-tech">PostgreSQL</span>
-              <span class="badge badge-tech">MSSQL</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">System Integration</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">ETL Pipelines</span>
-              <span class="badge badge-tech">RPA</span>
-              <span class="badge badge-tech">Excel Automation</span>
-              <span class="badge badge-tech">API Integration</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">Frontend Development</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Next.js</span>
-              <span class="badge badge-tech">React</span>
-              <span class="badge badge-tech">TailwindCSS</span>
-              <span class="badge badge-tech">Bootstrap</span>
-              <span class="badge badge-tech">JavaScript</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">Leadership & Team Management</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Mentoring</span>
-              <span class="badge badge-tech">Agile/Scrum</span>
-              <span class="badge badge-tech">Code Review</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">DevOps & Infrastructure</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Docker</span>
-              <span class="badge badge-tech">CI/CD</span>
-              <span class="badge badge-tech">AWS</span>
-              <span class="badge badge-tech">Linux Server</span>
-              <span class="badge badge-tech">Nginx</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">Automation & Workflow</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Python Scripts</span>
-              <span class="badge badge-tech">Excel Reporting</span>
-              <span class="badge badge-tech">RPA Tools</span>
-              <span class="badge badge-tech">Workflow Automation</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">Monitoring & Testing</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Postman</span>
-              <span class="badge badge-tech">Swagger</span>
-              <span class="badge badge-tech">Logging</span>
-              <span class="badge badge-tech">Unit Testing</span>
-            </div>
-          </div>
-
-          <div>
-            <h6 class="fw-semibold">Problem Solving</h6>
-            <div class="mb-2">
-              <span class="badge badge-tech">Root Cause Analysis</span>
-              <span class="badge badge-tech">Debugging</span>
-              <span class="badge badge-tech">Data Analysis</span>
-              <span class="badge badge-tech">Sentiment Analysis</span>
-              <span class="badge badge-tech">SQL Troubleshooting</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      <!-- Certifications -->
-      <section class="certification-section" id="certifications">
-        <h2>Certifications 📜 </h2>
-        <div class="certification-cards">
-          <div class="cert-card">
-            <strong>Dicoding</strong><br>
-            <a href="https://www.dicoding.com/certificates/JLX19O465P72" target="_blank">Backend JavaScript</a>
-          </div>
-          <div class="cert-card">
-            <strong>Dicoding</strong><br>
-            <a href="https://www.dicoding.com/certificates/ERZRE38QQXYV" target="_blank">Cloud Basics & Gen AI on AWS</a>
-          </div>
-          <div class="cert-card">
-            <strong>IBM</strong><br>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2H6LGD78W3E2" target="_blank">Data Science Professional Cert</a>
-          </div>
-          <div class="cert-card">
-            <strong>Udemy</strong><br>
-            <a href="https://www.udemy.com/certificate/UC-7e1024c6-fbf7-4dbc-9784-d7a5f69d186d/" target="_blank">RPA & Intelligent Automation</a>
-          </div>
-          <div class="cert-card">
-            <strong>Binar Academy</strong><br>
-            <a href="https://drive.google.com/file/d/1MKYVWqR5Vysc2iYKj5LJdmJvxN6tbfU_/view" target="_blank">Data Science Course</a>
-          </div>
-          <div class="cert-card">
-            <strong>Google</strong><br>
-            <a href="https://www.coursera.org/account/accomplishments/professional-cert/CWU8B5QPSWXG" target="_blank">Data Analytics Certificate</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="projects-section">
-        <h2>Projects 🚀</h2>
-        <div class="projects-grid">
-
-          <!-- Project 1 -->
-          <a href="https://courtsfin.courts.com.sg/" target="_blank" class="project-card text-decoration-none">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/Project%20-%20Courts%20Hub.png" alt="Courts Hub" />
-            <h3>Courts Hub (2025)</h3>
-            <p>Internal Business System - ERP</p>
-            <div class="tech-tags">
-              <span>Django</span><span>Next.Js</span><span>MSSQL</span><span>Docker</span><span>Bitbucket</span><span>Javascript</span><span>HTML</span><span>CSS</span>
-            </div>
-          </a>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/Warehose%20control%20System.png" alt="WCS" />
-            <h3>Warehouse Control System (2024)</h3>
-            <p>Realtime Dashboard for Part Division</p>
-            <div class="tech-tags">
-              <span>PHP</span><span>POSTGRESQL</span><span>Apache Airflow</span><span>Selenium</span><span>Javascript</span><span>HTML</span><span>CSS</span>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <a href="https://github.com/gigihko/dsc-challange-platinum" target="_blank" class="project-card text-decoration-none">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/DSC%20Challange%20-%20Binar.png" alt="DSC Challenge - Binar" />
-            <h3>Data Cleansing & Sentiment Analysis API (2023)</h3>
-            <p>Data Science Boothcamp final project</p>
-            <div class="tech-tags">
-              <span>Pytorch</span><span>Machine Learning</span><span>Transformer</span><span>Javascript</span><span>HTML</span><span>CSS</span>
-            </div>
-          </a>
-
-          <!-- Project 4 -->
-          <a href="https://github.com/gigihko/IBM-Applied-Data-Science-Capstone" target="_blank" class="project-card text-decoration-none">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/IBM%20Data%20Science.png" alt="Data Science IBM" />
-            <h3>IBM Data Science Project Capstone (2023)</h3>
-            <p>End to end IBM Data Science Certification Project</p>
-            <div class="tech-tags">
-              <span>Data Science</span><span>Web Scrapping</span><span>Explarotary Data Analysis</span><span>Data Viz</span><span>Predictive Analysis</span>
-            </div>
-          </a>
-
-          <!-- Project 5 -->
-          <a href="https://github.com/gigihko/paddy-desease" target="_blank" class="project-card text-decoration-none">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/Paddy%20Desease%20Classification%20Web.png" alt="paddy-desease" />
-            <h3>Paddy Desease Classification Web (2022)</h3>
-            <p>Classification Paddy Desease with CNN - Dense 201</p>
-            <div class="tech-tags">
-              <span>CNN</span><span>Tensor Flow</span><span>Keras</span><span>Pillow</span><span>Django</span>
-            </div>
-          </a>
-
-          <!-- Project 6 -->
-          <a href="https://github.com/gigihko/face-mask-detection-app" target="_blank" class="project-card text-decoration-none">
-            <img src="https://raw.githubusercontent.com/gigihko/web-portofolio/main/project/Face%20Mask%20Detection%20Web_2.png" alt="face-mask-detection" />
-            <h3>Face Mask Detection App (2022)</h3>
-            <p>Classification Face Mask detection with CNN - VGG19</p>
-            <div class="tech-tags">
-              <span>Deep Learning</span><span>CNN</span><span>Tensor Flow</span><span>VGG19</span><span>Haar Cascade</span><span>Django</span>
-            </div>
-          </a>
-
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="my-5 py-3 contact-section">
-        <div class="container-fluid px-2">
-          <h2 class="text-primary mb-2 text-center">Contact Me</h2>
-          <p class="lead mb-5 text-center">
-            I'm always open to discussing new projects, opportunities, or partnerships. <br>
-            Feel free to reach out!
-          </p>
-
-          <div class="row justify-content-center text-start">
-            <!-- Contact Info -->
-            <div class="col-md-4 col-lg-3 mb-4">
-              <h6 class="fw-bold mb-2">Contact Information</h6>
-              <p><i class="bi bi-envelope"></i> gigihko99@gmail.com</p>
-              <p><i class="bi bi-telephone"></i> +62 882-0005-84050</p>
-            </div>
-
-            <!-- Location -->
-            <div class="col-md-4 col-lg-4 mb-4">
-              <h6 class="fw-bold mb-2">Location</h6>
-              <p><i class="bi bi-geo-alt-fill"></i> Bekasi, Indonesia</p>
-              <p class="text-muted small">Available for remote work and relocation for the right opportunity.</p>
-            </div>
-
-            <!-- Social Media -->
-            <div class="col-md-4 col-lg-3 mb-4">
-              <h6 class="fw-bold mb-2">let's Connect</h6>
-              <p><a href="https://linkedin.com/in/gigihko" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a></p>
-              <p><a href="https://github.com/gigihko" target="_blank"><i class="bi bi-github"></i> GitHub</a></p>
-              <p><a href="https://instagram.com/gigihko" target="_blank"><i class="bi bi-instagram"></i> Instagram</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="text-center py-3 border-top">
-        <small class="d-block">&copy; 2025 Gigih Pambuko. All rights reserved.</small>
-      </footer>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
