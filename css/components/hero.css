@@ -1,11 +1,11 @@
 .hero {
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0 1rem;
   /* padding-top: 30px; */
 }
