@@ -34,9 +34,6 @@ function setHeroHeight() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
-window.addEventListener('resize', setHeroHeight);
-window.addEventListener('orientationchange', setHeroHeight);
-setHeroHeight();
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -59,5 +56,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   syncThemeIcon();
   updateNavbarTheme();
+  window.addEventListener('resize', setHeroHeight);
+  window.addEventListener('orientationchange', setHeroHeight);
+  setHeroHeight();
 });
 
