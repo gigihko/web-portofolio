@@ -64,7 +64,7 @@ body.light-mode .toggle-btn {
 
 .fade-in-section.is-visible {
   opacity: 1;
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
   transform: translateY(0);
   transform: none;
 }
