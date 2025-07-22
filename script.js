@@ -10,7 +10,7 @@ async function loadHTMLComponent(filePath, elementId) {
   }
 }
 
-  function syncThemeIcon() {
+function syncThemeIcon() {
   const icon = document.getElementById("theme-icon");
   const isLightMode = document.body.classList.contains("light-mode");
 
@@ -27,7 +27,7 @@ function toggleTheme() {
   document.body.classList.toggle("light-mode");
   localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
   syncThemeIcon();
-  updateNavbarTheme();
+  // updateNavbarTheme();
 }
 
 function setHeroHeight() {
@@ -35,29 +35,54 @@ function setHeroHeight() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+setTimeout(() => {
+  initializeFadeInSections();
+}, 300);
+
+function initializeFadeInSections() {
+  const fadeSections = document.querySelectorAll(".fade-in-section");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  fadeSections.forEach(section => observer.observe(section));
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Load komponen
-  await loadHTMLComponent("components/navbar.html", "navbar-placeholder");
-  await loadHTMLComponent("components/hero.html", "hero-placeholder");
-  await loadHTMLComponent("components/about.html", "about-placeholder");
-  await loadHTMLComponent("components/experience.html", "experience-placeholder");
-  await loadHTMLComponent("components/education.html", "education-placeholder");
-  await loadHTMLComponent("components/skills.html", "skills-placeholder");
-  await loadHTMLComponent("components/certifications.html", "certifications-placeholder");
-  await loadHTMLComponent("components/projects.html", "projects-placeholder");
-  await loadHTMLComponent("components/contact.html", "contact-placeholder");
-  await loadHTMLComponent("components/footer.html", "footer-placeholder");
+  const components = [
+    ["components/navbar.html", "navbar-placeholder"],
+    ["components/hero.html", "hero-placeholder"],
+    ["components/about.html", "about-placeholder"],
+    ["components/experience.html", "experience-placeholder"],
+    ["components/education.html", "education-placeholder"],
+    ["components/skills.html", "skills-placeholder"],
+    ["components/certifications.html", "certifications-placeholder"],
+    ["components/projects.html", "projects-placeholder"],
+    ["components/contact.html", "contact-placeholder"],
+    ["components/footer.html", "footer-placeholder"],
+  ];
 
-  // 2. Baru jalankan script yang butuh DOM (navbar & icon sudah ada)
+  for (const [path, target] of components) {
+    await loadHTMLComponent(path, target);
+  }
+
   if (localStorage.getItem('prefersLight') === 'true') {
     document.body.classList.add('light-mode');
   }
 
   syncThemeIcon();
-  updateNavbarTheme();
+  setHeroHeight();
   window.addEventListener('resize', setHeroHeight);
   window.addEventListener('orientationchange', setHeroHeight);
-  setHeroHeight();
-});
 
+  initializeFadeInSections();
+});
