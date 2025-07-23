@@ -13,7 +13,7 @@ body.light-mode .skills-section {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--accent);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .skills-section .badge-tech {
@@ -30,3 +30,9 @@ body.light-mode .skills-section {
 body.light-mode .skills-section .badge-tech {
   background: var(--accent-light);
 }
+
+.skills h2 {
+  color: #4F46E5;
+  font-weight: 500;
+}
+
