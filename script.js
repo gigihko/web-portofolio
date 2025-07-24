@@ -27,7 +27,7 @@ function toggleTheme() {
   document.body.classList.toggle("light-mode");
   localStorage.setItem('prefersLight', document.body.classList.contains('light-mode'));
   syncThemeIcon();
-  // updateNavbarTheme();
+  updateNavbarBackground();
 }
 
 function setHeroHeight() {
@@ -57,6 +57,20 @@ function initializeFadeInSections() {
   fadeSections.forEach(section => observer.observe(section));
 }
 
+function updateNavbarBackground() {
+  const nav = document.getElementById('main-navbar');
+  const isLightMode = document.body.classList.contains('light-mode');
+
+  if (isLightMode) {
+    nav.classList.add('nav-light');
+    nav.classList.remove('nav-dark');
+  } else {
+    nav.classList.add('nav-dark');
+    nav.classList.remove('nav-light');
+  }
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   const components = [
     ["components/navbar.html", "navbar-placeholder"],
@@ -81,8 +95,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   syncThemeIcon();
   setHeroHeight();
+  updateNavbarBackground();
   window.addEventListener('resize', setHeroHeight);
   window.addEventListener('orientationchange', setHeroHeight);
+  window.addEventListener('scroll', updateNavbarBackground);
 
   initializeFadeInSections();
 });

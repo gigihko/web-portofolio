@@ -6,7 +6,7 @@ nav {
   z-index: 1030;
   backdrop-filter: blur(6px);
   background: var(--navbar-bg, rgba(13,17,23,0.75));
-  transition: background 0.3s ease;
+  /* transition: background 0.3s ease; */
 }
 
 body.light-mode nav {
@@ -34,3 +34,19 @@ body.light-mode .navbar .nav-link {
 body.light-mode .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(17, 17, 17, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+/* nav.dynamic-bg {
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+} */
+
+body:not(.light-mode) nav.nav-dark {
+  background: #0d1117 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* bayangan halus */
+}
+
+body.light-mode nav.nav-light {
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* lebih lembut di light mode */
+}
+
+
